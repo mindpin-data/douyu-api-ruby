@@ -1,0 +1,31 @@
+GEM
+  remote: https://gems.ruby-china.org/
+  specs:
+    activemodel (5.0.0.1)
+      activesupport (= 5.0.0.1)
+    activesupport (5.0.0.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (~> 0.7)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    bson (4.2.0)
+    concurrent-ruby (1.0.2)
+    i18n (0.7.0)
+    minitest (5.10.1)
+    mongo (2.4.0)
+      bson (~> 4.2.0)
+    mongoid (6.0.3)
+      activemodel (~> 5.0)
+      mongo (~> 2.3)
+    thread_safe (0.3.5)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  mongoid (~> 6.0.0)
+
+BUNDLED WITH
+   1.13.6

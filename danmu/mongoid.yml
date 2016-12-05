@@ -1,0 +1,6 @@
+development:
+  clients:
+    default:
+      database: douyu-danmu
+      hosts:
+        - localhost:27017
