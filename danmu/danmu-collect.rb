@@ -66,13 +66,23 @@ class DouyuDanmuCollector
 
   def get_danmu
     content = ''
+    last_save_time = Time.now
 
     loop do
-      content = content + @socket.recv(1024)
+      delta = @socket.recv(1024)
+      content = content + delta
+
+      # 五分钟无响应则重连
+      if Time.now - last_save_time > 300
+        content = ''
+        self.init
+      end
 
       if content[-1] == "\x00"
         msg = DouyuSocketMessageContent.new(content)
         msg.save
+        last_save_time = Time.now
+
         content = ''
         puts msg
         self.init if msg.type == 'error'
